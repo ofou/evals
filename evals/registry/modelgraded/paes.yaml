@@ -10,7 +10,9 @@ paes:
     
     [END EVALUATION DATA]
 
-    Compare the Student's Answer with the Correct Answer and discern whether they match. Disregard variations in style, grammar, or punctuation since the answers are multiple-choice options. If the student's answer is the same as the correct option, return that option letter (A, B, C, D, or E). If it is not, return "None of the above." 
+    Compare the Student's Answer with the Correct Answer and discern whether they match. Disregard variations in style, grammar, or punctuation since the answers are multiple-choice options. If the student's answer is the same as the correct option, return that option letter (A, B, C, D, or E). If it is not, return "None of the above."
+    
+    First, write out in a step by step manner your reasoning to be sure that your conclusion is correct. Avoid simply stating the correct answer at the outset. Then print only a single choice from \"A\" or \"B\" or \"C\" or \"D\" or \"E\" (without quotes or punctuation) on its own line corresponding to the correct answer. At the end, repeat just the answer by itself on a new line. 
 
     What is the evaluation result?
   choice_strings: ABCDE
