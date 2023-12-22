@@ -1,0 +1,11 @@
+chilean-math-paes:
+  id: chilean-math-paes.cot
+  description: Eval that checks ability to pass the chilean PAES (University entrance exam) test.
+  metrics: [accuracy]
+
+chilean-math-paes.cot:
+  class: evals.elsuite.modelgraded.classify:ModelBasedClassify
+  args:
+    samples_jsonl: chilean-math-paes/samples.jsonl
+    eval_type: cot_classify
+    modelgraded_spec: paes
