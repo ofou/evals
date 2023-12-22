@@ -1,21 +1,20 @@
 paes:
   prompt: |-
-    Given the following data from a PAES exam question, evaluate the student's response against the expert's answer:
+    Using the provided student's answer and the correct answer for a Chilean math PAES exam question, determine the accuracy of the student's selection. Focus exclusively on whether the student selected the correct multiple-choice option (A, B, C, D, or E).
 
-    [BEGIN DATA]
-    ************
-    [Question]: {input}
-    ************
-    [Expert's Answer]: {ideal}
-    ************
-    [Student's Response]: {completion}
-    ************
-    [END DATA]
+    [EVALUATION DATA]
 
-    Compare the factual content of the submitted answer with the expert answer. Ignore any differences in style, grammar, or punctuation.
-    The submitted answer may either be a subset or superset of the expert answer, or it may conflict with it. Determine which case applies. 
-    Check if the student's response contains one of these options (A, B, C, D, or E) and return the corresponding option. If the student's response does not contain any of these options, return "None of the above".
+    Question: {input}
+    Correct Answer: {ideal}
+    Student's Answer: {completion}
+    
+    [END EVALUATION DATA]
+
+    Compare the Student's Answer with the Correct Answer and discern whether they match. Disregard variations in style, grammar, or punctuation since the answers are multiple-choice options. If the student's answer is the same as the correct option, return that option letter (A, B, C, D, or E). If it is not, return "None of the above." 
+
+    What is the evaluation result?
   choice_strings: ABCDE
-  choice_scores: {A: 1, B: 1, C: 1, D: 1, E: 1, None of the above: 0}
+  choice_scores:
+    { A: 1, B: 1, C: 1, D: 1, E: 1, None of the above: 0 }
   input_outputs:
     input: completion
